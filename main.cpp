@@ -8,7 +8,7 @@ int main(void)
     Node *initNode;
 
 #ifdef FP_DEFINED
-    fp = fopen("graph.in", "r");
+    fp = fopen("graph2_2.in", "r");
 #else
     fp = getFilePtr();
 #endif
@@ -86,11 +86,13 @@ Node * makeNode(char aName)
         list = newNode;
         return newNode;
     }
-    
+
     while (ptr->next)
     {
-        if (ptr->name < aName)
-        ptr = ptr->next;
+        if (aName < ptr->next->name)
+            break;
+        else
+            ptr = ptr->next;
     }
 
     newNode->next = ptr->next;
@@ -163,6 +165,7 @@ void printPaths(void)
     Node *finish = list;
     Node *parent;
 
+    setlocale(LC_ALL, "866");
     system("cls");
     while (finish)
     {

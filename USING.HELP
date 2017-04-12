@@ -1,0 +1,4 @@
+node_1  node_2 weight  node_3 weight .. node_n weight
+node_2  node_1 weight  node_3 weight ..  node_n weight
+                          ..
+node_n  node_1 weight  node_2 weight ..  node_n weight
